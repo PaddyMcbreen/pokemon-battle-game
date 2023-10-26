@@ -1,4 +1,4 @@
-const Pokemon = require("./pokemon-properties")
+const {Pokemon} = require("./pokemon-properties")
 
 describe("PokemonProperties", function(){
     test("Returns a typeof class", function(){
@@ -67,19 +67,30 @@ describe("PokemonMethods", function(){
         expect(result).toBe(95)
     })
 })
+describe('useMove', () => {
+    test('should return pokemon attack damage', () => {
+        const dragonite = new Pokemon('Dragonite', 100, 50, 'Dragon rage')
+        const result = dragonite.useMove()
+        expect(result).toBe(50)
+    })
+})
 
     describe("PokemonHasFainted", function(){
     test("returns hasFainted (false) when health is zero", function(){
-        const dragonite = new Pokemon('dragonite', 700, 1600, 'dragon rage')
-        const pikachu = new Pokemon('pikachu', 1000, 500, 'thundershock')
-        const result = pikachu.hasFainted(dragonite)
+        // const dragonite = new Pokemon('dragonite', 700, 1600, 'dragon rage')
+        const pikachu = new Pokemon('pikachu', 100, 50, 'thundershock')
+        pikachu.takeDamage(10)
+        const result = pikachu.hasFainted()
+        console.log(result)
         expect(result).toBe(false)
     })
 
     test("returns hasFainted (false) when health is zero", function(){
-        const dragonite = new Pokemon('dragonite', 100, 30, 'dragon rage')
+        // const dragonite = new Pokemon('dragonite', 100, 30, 'dragon rage')
         const pikachu = new Pokemon('pikachu', 30, 50, 'thundershock')
-        const result = pikachu.hasFainted(dragonite)
+        pikachu.takeDamage(60)
+        const result = pikachu.hasFainted()
+        console.log(result)
         expect(result).toBe(true)
     })
 })
