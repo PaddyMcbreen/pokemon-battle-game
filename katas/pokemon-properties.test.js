@@ -84,28 +84,3 @@ describe("PokemonMethods", function(){
     })
 })
 
-
-
-// --- TESTS --- //
-// returns a takeDamage method
-// return health - hitPoint - attackDamage
-// return the attackDamage
-// create a hasFainted method
-
-
-
-// takeDamage
-
-// Will take a number and reduce its health by the number given.
-// useMove
-
-// Will return the Pokemon's attackDamage.
-// Should also console log something like "PokemonX used PokemonX's move".
-// Don't worry about testing the console logs, but do think about how you might go about it.
-
-// hasFainted
-
-// When a Pokemon's health is reduced to zero they faint.
-// hasFainted will return a boolean based on whether the Pokemon has fainted.
-// I'm done!
-
