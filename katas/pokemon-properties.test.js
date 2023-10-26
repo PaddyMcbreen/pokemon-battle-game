@@ -58,22 +58,54 @@ describe("PokemonProperties", function(){
     
 })
 
+describe("PokemonMethods", function(){
+    test("returns a takeDamage method and shows the name, damage taken and health remaining", function(){
+        // hitPoints - attackDamage = remaining health
+        const dragonite = new Pokemon('dragonite', 1000, 500, 'dragon rage')
+        const pikachu = new Pokemon('pikachu', 100, 50, 'thundershock')
+        const result = pikachu.takeDamage(5)
+        expect(result).toBe(95)
+    })
+})
+
+    describe("PokemonHasFainted", function(){
+    test("returns hasFainted (false) when health is zero", function(){
+        const dragonite = new Pokemon('dragonite', 700, 1600, 'dragon rage')
+        const pikachu = new Pokemon('pikachu', 1000, 500, 'thundershock')
+        const result = pikachu.hasFainted(dragonite)
+        expect(result).toBe(false)
+    })
+
+    test("returns hasFainted (false) when health is zero", function(){
+        const dragonite = new Pokemon('dragonite', 100, 30, 'dragon rage')
+        const pikachu = new Pokemon('pikachu', 30, 50, 'thundershock')
+        const result = pikachu.hasFainted(dragonite)
+        expect(result).toBe(true)
+    })
+})
 
 
 
-// A Pokemon will need to have the following properties:
-// Uses a constructor
-// name: the name its given
-// hitPoints: the amount of health the Pokemon has, represented as a number
-// attackDamage: the amount of damage a Pokemon can inflict (should be a number)
-// move: This is the move the Pokemon does when battling, this should default to "tackle"
+// --- TESTS --- //
+// returns a takeDamage method
+// return health - hitPoint - attackDamage
+// return the attackDamage
+// create a hasFainted method
 
 
-// -- TESTS -- //
-// returns a typeof class
-// returns a name
-// returns a hitPoints
-// returns a attackDamage
-// returns a move (tackle)
-// returns everything
+
+// takeDamage
+
+// Will take a number and reduce its health by the number given.
+// useMove
+
+// Will return the Pokemon's attackDamage.
+// Should also console log something like "PokemonX used PokemonX's move".
+// Don't worry about testing the console logs, but do think about how you might go about it.
+
+// hasFainted
+
+// When a Pokemon's health is reduced to zero they faint.
+// hasFainted will return a boolean based on whether the Pokemon has fainted.
+// I'm done!
 

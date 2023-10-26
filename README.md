@@ -7,14 +7,11 @@ https://l2c.northcoders.com/courses/fun/pokemon-battler
 
 
 
-
-class Pokemon (){
+class Pokemon {
     constructor(name, hitPoints, attackDamage, move){
         this.name = name,
         this.hitPoints = hitPoints,
-        this.attackDamage = attackDamage,
-        this.move = 'tackle'
+        this.attackDamage = attackDamage
+        this.move = move || 'tackle'
     }
 }
-
-const picachu = new Pokemon(pickachu, 1000, 200)
