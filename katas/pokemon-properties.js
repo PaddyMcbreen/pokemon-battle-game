@@ -1,24 +1,27 @@
 class Pokemon {
     constructor(name, hitPoints, attackDamage, move){
-        this.name = name,
-        this.hitPoints = hitPoints,
+        this.name = name
+        this.hitPoints = hitPoints
         this.attackDamage = attackDamage
         this.move = move || 'tackle'
     }
 
-    takeDamage(damage){
-        const health = this.hitPoints - damage
-
-        if (damage > 0){
-            return health
-        } 
-        if (this.hitPoint < 0){
-            this.hitPoint = 0
-        } 
+    takeDamage(damage) {
+        if (damage > 0) {
+            const health = this.hitPoints - damage;
+            if (health < 0) {
+                this.hitPoints = 0;
+            } else {
+                this.hitPoints = health;
+            }
+        }
+        return this.hitPoints;
     }
 
     useMove(){
-        console.log(`${this.name} used his special move ${move}`)
+        const moveStr = `${this.name} used his special move ${this.move}`
+        console.log(moveStr)
+        return this.attackDamage
     }
 
     hasFainted(){
@@ -26,19 +29,59 @@ class Pokemon {
     }
 }
 
-// class Fainted extends Pokemon {
-//     constructor(name, hitPoints, attackDamage){
-//         super(name, hitPoints, attackDamage)
+class Fire extends Pokemon{
+    constructor(name, hisPoints, attackDamage, move){
+        super(name, hisPoints, attackDamage, move)
+        this.type = 'fire'
+    }
+    isEffectiveAgainst(input){
+        return (input.type === 'grass') ? true : false
+    }
+    isWeakTo(input){
+        return (input.type === 'water') ? true : false
+    }
+}
+class Water extends Pokemon{
+    constructor(name, hisPoints, attackDamage, move){
+        super(name, hisPoints, attackDamage, move)
+        this.type = 'water'
+    }
+    isEffectiveAgainst(input){
+        return (input.type === 'fire') ? true : false
+    }
+    isWeakTo(input){
+        return (input.type === 'grass') ? true : false
+    }
 
-//         const hasFainted = true
-//         const hasNotFainted = false
+}
+class Grass extends Pokemon{
+    constructor(name, hisPoints, attackDamage, move){
+        super(name, hisPoints, attackDamage, move)
+        this.type = 'grass'
+    }
+    isEffectiveAgainst(input){
+        return (input.type === 'water') ? true : false
+    }
+    isWeakTo(input){
+        return (input.type === 'fire') ? true : false
+    }
+    
+}
+class Normal extends Pokemon{
+    constructor(name, hisPoints, attackDamage, move){
+        super(name, hisPoints, attackDamage, move)
+        this.type = 'normal'
+    }
+    isEffectiveAgainst(input){
+        return (input.type === 'grass') ? true : false
 
-//      if (this.health <= 0){
-//         return hasFainted
-//     } else{
-//         return hasNotFainted
-//     }}
-// }
+
+    }
+    isWeakTo(input){
+        return (input.type === 'water' || input.type === 'fire') ? true : false
+    }
+    
+}
 
 
-module.exports = Pokemon
+module.exports = {Pokemon, Fire, Water, Grass, Normal}
