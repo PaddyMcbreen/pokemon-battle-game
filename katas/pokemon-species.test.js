@@ -65,3 +65,11 @@ describe('NormalPokemon', () => {
     })
     
 })
+
+
+describe('Throw method', () => {
+    test('should ...', () => {
+        
+    })
+    
+})

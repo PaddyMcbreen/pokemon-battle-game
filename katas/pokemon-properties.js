@@ -107,4 +107,6 @@ class NormalPokemon extends Normal{
         super(name, hisPoints, attackDamage, move)
     }
 }
+
+
 module.exports = {Pokemon, Fire, Water, Grass, Normal, FirePokemon, WaterPokemon, GrassPokemon, NormalPokemon}
