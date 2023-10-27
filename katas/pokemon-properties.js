@@ -83,5 +83,28 @@ class Normal extends Pokemon{
     
 }
 
+class FirePokemon extends Fire{  
+    constructor(name, hisPoints, attackDamage){
+        super(name, hisPoints, attackDamage)
+        this.move = 'ember'
+    }
+}
+class WaterPokemon extends Water{  
+    constructor(name, hisPoints, attackDamage){
+        super(name, hisPoints, attackDamage)
+        this.move = 'water gun'
+    }
+}
+class GrassPokemon extends Grass{
+    constructor(name, hisPoints, attackDamage){
+        super(name, hisPoints, attackDamage)
+        this.move = 'vine whip'
+    }
+}
 
-module.exports = {Pokemon, Fire, Water, Grass, Normal}
+class NormalPokemon extends Normal{
+    constructor(name, hisPoints, attackDamage, move){
+        super(name, hisPoints, attackDamage, move)
+    }
+}
+module.exports = {Pokemon, Fire, Water, Grass, Normal, FirePokemon, WaterPokemon, GrassPokemon, NormalPokemon}
