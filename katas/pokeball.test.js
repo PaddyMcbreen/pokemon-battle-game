@@ -1,4 +1,4 @@
-const {Pokeball} = require("./pokeball")
+const {Pokeball, Trainer} = require("./pokeball")
 const {FirePokemon, WaterPokemon, Pokemon} = require("./pokemon-properties")
 
 
@@ -76,6 +76,118 @@ describe('Contains Method', () => {
       })
       
 })
+
+
+describe('Trainer', () => {
+  test('should check the typeof class is a function', () => {
+    expect(typeof Trainer).toBe('function')
+})
+
+test('Tests the constuctor type', () => {
+    expect(typeof constructor).toBe('function')
+})
+
+test('Checks the instanceof trainer', () => {
+  const trainer = new Trainer()
+  expect(trainer).toBeInstanceOf(Trainer)
+})
+  
+})
+
+
+describe('Pokebelt', () => {
+  test('Functionality of pokebelt', () => {
+    
+    expect().toBe()
+  })
+  
+})
+
+
+describe('Catch Method', () => {
+  test('should check that the catch method works on one pokemon', () => {
+    const charmander = new FirePokemon('charmander', 100, 50)
+    const trainer = new Trainer()
+    const pokeball = new Pokeball()
+
+    trainer.catch(charmander, pokeball)
+
+    console.log(trainer.pokebelt)
+
+    expect(trainer.pokebelt[0]).toEqual(new Pokeball(charmander))
+  })
+  
+  test('should check that the catch method works on multiple pokemon', () => {
+    const charmander1 = new FirePokemon('charmander', 100, 50)
+    const charmander2 = new FirePokemon('charmander', 100, 50)
+    const charmander3 = new FirePokemon('charmander', 100, 50)
+
+    const trainer = new Trainer()
+    const pokeball1 = new Pokeball()
+    const pokeball2 = new Pokeball()
+    const pokeball3 = new Pokeball()
+
+
+    trainer.catch(charmander1, pokeball1)
+    trainer.catch(charmander2, pokeball2)
+    trainer.catch(charmander3, pokeball3)
+
+    console.log(trainer.pokebelt)
+
+    expect(trainer.pokebelt[0]).toEqual(new Pokeball(charmander1))
+    expect(trainer.pokebelt[1]).toEqual(new Pokeball(charmander2))
+    expect(trainer.pokebelt[2]).toEqual(new Pokeball(charmander3))
+  })
+
+  test('should check that the catch method is limited to 6 pokeballs', () => {
+    const charmander1 = new FirePokemon('charmander', 100, 50)
+    const charmander2 = new FirePokemon('charmander', 100, 50)
+    const charmander3 = new FirePokemon('charmander', 100, 50)
+    const charmander4 = new FirePokemon('charmander', 100, 50)
+    const charmander5 = new FirePokemon('charmander', 100, 50)
+    const charmander6 = new FirePokemon('charmander', 100, 50)
+    const charmander7 = new FirePokemon('charmander', 100, 50)
+
+    const trainer = new Trainer()
+    const pokeball1 = new Pokeball()
+    const pokeball2 = new Pokeball()
+    const pokeball3 = new Pokeball()
+    const pokeball4 = new Pokeball()
+    const pokeball5 = new Pokeball()
+    const pokeball6 = new Pokeball()
+    const pokeball7 = new Pokeball()
+
+
+    trainer.catch(charmander1, pokeball1)
+    trainer.catch(charmander2, pokeball2)
+    trainer.catch(charmander3, pokeball3)
+    trainer.catch(charmander4, pokeball4)
+    trainer.catch(charmander5, pokeball5)
+    trainer.catch(charmander6, pokeball6)
+    // trainer.catch(charmander7, pokeball7)
+
+    console.log(trainer.pokebelt)
+
+    expect(trainer.pokebelt[0]).toEqual(new Pokeball(charmander1))
+    expect(trainer.pokebelt[1]).toEqual(new Pokeball(charmander2))
+    expect(trainer.pokebelt[2]).toEqual(new Pokeball(charmander3))
+    expect(trainer.pokebelt[3]).toEqual(new Pokeball(charmander4))
+    expect(trainer.pokebelt[4]).toEqual(new Pokeball(charmander5))
+    expect(trainer.pokebelt[5]).toEqual(new Pokeball(charmander6))
+    expect(trainer.catch(charmander7, pokeball7)).toBe('Pokebelt is full!')
+  })
+  
+})
+
+describe('getPokemon Method', () => {
+  test('should ...', () => {
+    
+    expect().toBe()
+  })
+  
+})
+
+
 
 
 

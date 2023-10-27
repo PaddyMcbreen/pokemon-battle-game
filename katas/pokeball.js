@@ -44,8 +44,30 @@ class Pokeball {
 }
 
 
+class Trainer {
+    constructor(){
+        this.pokebelt = []
+    }
+    
+
+    catch (pokemon, pokeball){
+        if (this.pokebelt.length >= 6){
+            return 'Pokebelt is full!'
+        }
+        else {
+            pokeball.throwPokeball(pokemon)
+        this.pokebelt.push(pokeball)
+        }
+    }
+
+    getPokemon (){
+        
+    }
+}
 
 
 
 
-module.exports = {Pokeball}
+
+
+module.exports = {Pokeball, Trainer}
