@@ -73,12 +73,12 @@ class Normal extends Pokemon{
         this.type = 'normal'
     }
     isEffectiveAgainst(input){
-        return (input.type === 'grass') ? true : false
+        return (input.type === 'grass' || input.type === 'fire'  || input.type === 'water' ) ? false : true
 
 
     }
     isWeakTo(input){
-        return (input.type === 'water' || input.type === 'fire') ? true : false
+        return (input.type === 'grass' || input.type === 'fire'  || input.type === 'water' ) ? false : true
     }
     
 }

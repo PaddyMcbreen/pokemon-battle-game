@@ -96,7 +96,7 @@ describe('waterPokemon', () => {
             const normalPokemon = new Normal('Machamp', 110, 60, 'Fury fist')
             const grassPokemon = new Grass('Gloom', 110, 40, 'Poison leaves')
             const result = normalPokemon.isEffectiveAgainst(grassPokemon)
-            expect(result).toBe(true)
+            expect(result).toBe(false)
         })
     })
     describe('isWeakTo', () => {
@@ -104,7 +104,7 @@ describe('waterPokemon', () => {
             const normalPokemon = new Normal('Machamp', 110, 60, 'Fury fist')
             const firePokemon = new Fire('Charizard', 100, 50, 'Dragon Roar!')
             const result = normalPokemon.isWeakTo(firePokemon)
-            expect(result).toBe(true)
+            expect(result).toBe(false)
         })
     })
 })
