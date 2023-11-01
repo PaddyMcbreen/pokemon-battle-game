@@ -95,15 +95,6 @@ test('Checks the instanceof trainer', () => {
 })
 
 
-describe('Pokebelt', () => {
-  test('Functionality of pokebelt', () => {
-    
-    expect().toBe()
-  })
-  
-})
-
-
 describe('Catch Method', () => {
   test('should check that the catch method works on one pokemon', () => {
     const charmander = new FirePokemon('charmander', 100, 50)
@@ -180,12 +171,14 @@ describe('Catch Method', () => {
 })
 
 describe('getPokemon Method', () => {
-  test('should ...', () => {
+  test('should take a pokemon name', () => {
     
     expect().toBe()
   })
   
 })
+
+
 
 
 

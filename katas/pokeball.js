@@ -60,8 +60,14 @@ class Trainer {
         }
     }
 
-    getPokemon (){
-        
+    getPokemon (pokemon, pokeball){
+        for (let i = 0; i < this.pokebelt.length; i++){
+            const chosenPokemon = this.pokebelt[i]
+            if (chosenPokemon === pokemon){
+                pokeball.throwPokeball(pokemon)
+                console.log(`${pokemon.name} has been chosen`)
+            }
+        }
     }
 }
 
